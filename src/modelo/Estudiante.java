@@ -6,7 +6,7 @@ package modelo;
 
 /**
  *
- * @author jtcaq
+ * @author Maricielo Isabel Diaz Morales
  */
 public class Estudiante extends Usuario {
     
