@@ -6,7 +6,7 @@ package modelo;
 
 /**
  *
- * @author jtcaq
+ * @author Ramses zhores iturrizaga Acosta
  */
 public abstract class MaterialBibliografico {
     
