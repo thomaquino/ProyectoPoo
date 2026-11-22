@@ -1,6 +1,9 @@
 
 package modelo;
-
+/**
+ *
+ * @author Maricielo Isabel Diaz Morales
+ */
 
 public abstract class Usuario {
     private int id;
