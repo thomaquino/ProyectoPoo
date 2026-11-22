@@ -8,7 +8,7 @@ import interfaces.Reproducible;
 
 /**
  *
- * @author jtcaq
+ * @author Ramses zhores iturrizaga Acosta 
  */
 public class AudioLibro extends MaterialBibliografico implements Reproducible {
     
