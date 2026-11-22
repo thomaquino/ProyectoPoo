@@ -7,7 +7,7 @@ package modelo;
 import interfaces.Prestable;
 /**
  *
- * @author jtcaq
+ * @author Ramses zhores iturrizaga Acosta
  */
 public class LibroFisico extends MaterialBibliografico implements Prestable {
     
