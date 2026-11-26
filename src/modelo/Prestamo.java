@@ -23,7 +23,9 @@ public class Prestamo {
     public Prestamo() {
     }
 
-    public Prestamo(int idPrestamo, Usuario usuario, LibroFisico libro, LocalDate fechaPrestamo, LocalDate fechaDevolucion, boolean devuelto) {
+    public Prestamo(int idPrestamo, Usuario usuario, LibroFisico libro, 
+                    LocalDate fechaPrestamo, LocalDate fechaDevolucion,
+                    boolean devuelto) {
         this.idPrestamo = idPrestamo;
         this.usuario = usuario;
         this.libro = libro;
@@ -90,5 +92,11 @@ public class Prestamo {
         
         libro.devolver();
     }
-       
+
+    @Override
+    public String toString() {
+        return "Prestamo(" + "idPrestamo=" + idPrestamo + ", usuario=" + usuario.getNombre() + ", libro=" + libro.getTitulo() +
+            ", fechaPrestamo=" + fechaPrestamo + ", fechaDevolucion=" + fechaDevolucion +  ", devuelto=" + devuelto +')';
+    }
+    
 }
