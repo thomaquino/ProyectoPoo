@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
 import interfaces.Reproducible;
@@ -33,6 +30,10 @@ public class AudioLibro extends MaterialBibliografico implements Reproducible {
     }
 
     public void setDuracionMinutos(int duracionMinutos) {
+        
+        if(duracionMinutos <= 0){
+        throw new IllegalArgumentException("La duración debe ser mayor que cero");
+        }
         this.duracionMinutos = duracionMinutos;
     }
 
@@ -41,6 +42,9 @@ public class AudioLibro extends MaterialBibliografico implements Reproducible {
     }
 
     public void setNarrador(String narrador) {
+        if(narrador == null ||narrador.isBlank()){
+        throw new IllegalArgumentException("Debe indicar un narrador");
+        }
         this.narrador = narrador;
     }
 
@@ -49,6 +53,9 @@ public class AudioLibro extends MaterialBibliografico implements Reproducible {
     }
 
     public void setFormatoAudio(String formatoAudio) {
+        if(formatoAudio == null ||formatoAudio.isBlank()){
+        throw new IllegalArgumentException("Debe indicar un formato");
+        }
         this.formatoAudio = formatoAudio;
     }
     
@@ -65,7 +72,7 @@ public class AudioLibro extends MaterialBibliografico implements Reproducible {
 
     @Override
     public String toString() {
-        return super.toString() + ", Tipo: " + getTipoMaterial()+  ", Narrador: "
+        return super.toString() + ", Narrador: "
             + narrador + ", Duración: " + duracionMinutos + " min" + ", Formato: "
             + formatoAudio;
     }
