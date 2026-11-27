@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
 /**
@@ -68,6 +65,9 @@ public abstract class MaterialBibliografico {
     }
 
     public void setIsbn(String isbn) {
+        if(isbn == null || isbn.isBlank()){
+        throw new IllegalArgumentException("ISBN obligatorio");
+        }
         this.isbn = isbn;
     }
 
@@ -76,8 +76,13 @@ public abstract class MaterialBibliografico {
     }
 
     public void setAnioPublicacion(int anioPublicacion) {
+        
+        if(anioPublicacion < 0){
+        throw new IllegalArgumentException("El año no puede ser negativo");
+        }
         this.anioPublicacion = anioPublicacion;
     }
+    
 
     public boolean isDisponible() {
         return disponible;
@@ -91,7 +96,10 @@ public abstract class MaterialBibliografico {
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Tipo: " + getTipoMaterial() + ", Titulo: " + titulo + ", Autor: " + autor + ", ISBN: " + isbn + ", Categoria:" + categoria + ", Año: " + anioPublicacion + ", Disponible: " + disponible;
+        return "ID: " + id + ", Tipo: " + getTipoMaterial() + ", Titulo: "
+                + titulo + ", Autor: " + autor + ", ISBN: " + isbn 
+                + ", Categoria:" + categoria + ", Año: " + anioPublicacion 
+                + ", Disponible: " + disponible;
     }
     
     
