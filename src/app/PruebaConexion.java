@@ -5,6 +5,8 @@
 package app;
 import conexion.ConexionBD;
 import java.sql.Connection;
+import dao.EstudianteDAO;
+import modelo.Estudiante;
 
 /**
  *
@@ -19,6 +21,16 @@ public class PruebaConexion {
         } catch(Exception e){
             System.out.println("error: "+e.getMessage());
         }
+    
+    EstudianteDAO dao = new EstudianteDAO();
+    
+    Estudiante estudiante = new Estudiante (0, "Jack","jack@utp.edu.pe","ingenieria");
+    
+    boolean registrado = dao.registrarEstudiante(estudiante);
+    
+        System.out.println(registrado ? "Registro Exitoso": "Error al registrar");
+    
     }
+    
     
 }
