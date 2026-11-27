@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
 import interfaces.Prestable;
@@ -38,6 +35,10 @@ public class LibroFisico extends MaterialBibliografico implements Prestable {
     }
 
     public void setCantidadEjemplares(int cantidadEjemplares) {
+        
+        if(cantidadEjemplares < 0){
+        throw new IllegalArgumentException("La cantidad de ejemplares no puede ser negativa");
+    }
         this.cantidadEjemplares = cantidadEjemplares;
     }
 
@@ -46,6 +47,11 @@ public class LibroFisico extends MaterialBibliografico implements Prestable {
     }
 
     public void setUbicacionEstante(String ubicacionEstante) {
+       
+        if(ubicacionEstante == null|| ubicacionEstante.isBlank()){
+
+        throw new IllegalArgumentException("Debe indicar una ubicación de estante");
+        }
         this.ubicacionEstante = ubicacionEstante;
     }
 
